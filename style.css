@@ -13,17 +13,28 @@ h3 { /* Alterado de h1 para h3 para coincidir com seu HTML */
 
 body {
     background-color: #ac9c9c;
-    background-image: url("assets/fundo.jpg");
+    background-image: url("assets/13229392651429421.jpg");
     font-family: Arial, sans-serif;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1400px;
+    background-size: 1920px;
+    background-position: 50%;
+    background-position-x: 50%;
+    background-position-y: 0%;
 }
 
 p {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #000;
-    margin: 20px; /* Corrigido: o espaço entre '20' e 'px' foi removido */
+    margin: 20px; 
+}
+button{
+    text-align: center;
+     
+    font-size: 20px;
+    margin-top: 20px;
+    margin: center;
+    text-decoration: rgb(red, green, blue);
 }
