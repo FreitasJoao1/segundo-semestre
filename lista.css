@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-h1 {
+h3 { /* Alterado de h1 para h3 para coincidir com seu HTML */
     text-align: center;
     font-size: 6rem;
     color: #aa2929;
@@ -19,10 +19,11 @@ body {
     background-position: center;
     background-size: 1400px;
 }
+
 p {
     text-align: center;
     font-size: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #000;
-    margin: 20 px 20 px 20 px 20 px;
+    margin: 20px; /* Corrigido: o espaço entre '20' e 'px' foi removido */
 }
