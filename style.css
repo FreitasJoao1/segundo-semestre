@@ -1,40 +1,102 @@
-/* RESET DE CONFIGURAÇÃO GERAIS */
+/* RESET DE CONFIGURAÇÕES GERAIS PARA OS NAVEGADORES. */
 * {
-    margin: 0;
+    margin: 0;       
     padding: 0;
     box-sizing: border-box;
 }
 
-h3 { /* Alterado de h1 para h3 para coincidir com seu HTML */
-    text-align: center;
-    font-size: 6rem;
-    color: #aa2929;
-}
-
 body {
-    background-color: #ac9c9c;
-    background-image: url("assets/13229392651429421.jpg");
-    font-family: Arial, sans-serif;
+    background-color: rgba(177, 170, 185, 0.033);
+    background-image: url("assets/fundo/fundo.jpg");
+    
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1920px;
-    background-position: 50%;
-    background-position-x: 50%;
-    background-position-y: 0%;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-p {
+h1 {
     text-align: center;
-    font-size: 3rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #000;
-    margin: 20px; 
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    margin: 20px;
 }
-button{
+
+h2{
     text-align: center;
-     
+    font-size: 37px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* margin: 0px; */
+    color: rgb(0, 0, 0);
+
+}
+/* 
+hr {
+    max-width: 50%;
+    margin: 20px auto;
+}  */
+
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 6px;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+    font-size: 22px;
+}
+
+button {
+    display: block;
+    margin: 50px auto;
+    border-radius: 35px;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+
+ol {
+    margin: 10px auto;
+    padding: 30px auto;
+    margin-bottom: 30px;
+    text-align: center;
+    list-style-position: inside;
+}
+
+li {
     font-size: 20px;
-    margin-top: 20px;
-    margin: center;
-    text-decoration: rgb(red, green, blue);
+    margin-bottom: 10px;
+    font-weight: 540;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 15px;
+}
+
+img {
+    display: block;
+    max-width: 400px;
+    margin: 9px auto;
+}
+
+input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+input[type="text"] {
+    text-align: center;
+    display: block;
+    width: 250px;
+    border-radius: 100px;
+    margin: 25px auto;
+    font-weight: 700;
+    padding: 9px;
 }
