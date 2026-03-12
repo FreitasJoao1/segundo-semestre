@@ -10,7 +10,7 @@ const listaDeUsuarios = [
     {nome: "Ana", idade: 25},
     {nome: "Maria", idade: 35},
     {nome: "Joana", idade: 45},
-    {nome: "José", idade: 15},
+    {nome: "Ane", idade: 15},
     {nome: "silvana", idade: 17},
 ]
 
@@ -48,3 +48,24 @@ numerospares.forEach(n => console.log(n))
 
 console.log("\n Na lista de nomes, mostre todos os nomes com forEach: ")
 listaDeNomes.forEach(nome => console.log(nome))
+
+
+console.log("\n Na lista de usuários, mostre apenas os nomes: ")
+const nomes = listaDeUsuarios.map(usuario => usuario.nome)
+nomes.forEach(nome => console.log(nome))
+
+
+console.log("\n Na lista de usuários, encontre o usuario.")
+const usuarioEncontrado = listaDeUsuarios.find(usuario => usuario.nome === "Ane")
+console.log(usuarioEncontrado)
+console.log(`Nome: ${usuarioEncontrado.nome} \n Idade: ${usuarioEncontrado.idade} anos.`)
+
+console.log("\n Na lista de usuários, encontre o usuario com idade maior que 45 anos.")
+const usuariomaiorque = listaDeUsuarios.filter(usuario => usuario.idade == 45)
+usuariomaiorque.forEach( usuario => 
+    console.log(`${usuario.nome} tem ${usuario.idade} anos.`))
+
+console.log("\n Na lista de usuários, somando todas as idades: ")
+const somaIdades = listaDeUsuarios.reduce((total, usuario) => total + usuario.idade, )
+console.log(somaIdades)
+
