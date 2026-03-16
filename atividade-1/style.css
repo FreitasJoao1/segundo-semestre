@@ -1,80 +1,98 @@
-/* reset do navegador */
-
+/* Reset padrão para garantir consistência */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* Importando a fonte para o estilo "Bora Bahêa" */
+
+/* Importando as fontes para o estilo "Bora Bahêa" */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap');
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
-    
-    /* --- CORREÇÃO DO FUNDO --- */
-    /* 1. Define uma cor de fundo escura caso a imagem falhe */
-    background-color: #1a1a1a; 
-    
-    /* 2. Aplica o degradê de escurecimento E a imagem */
-    /* IMPORTANTE: Baixe uma imagem da Arena e salve como 'fundo-arena.jpg' 
-       na mesma pasta do seu arquivo CSS. Depois, use o código abaixo: */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('fundo-arena.jpg'); /* Nome do arquivo local */
-
-    /* Se você quiser tentar usar o link da internet novamente, use este: */
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Itaipava_Arena_Fonte_Nova_-_Salvador_-_Bahia_-_Brasil_%28setembro_de_2015%29.jpg'); */
-
-    background-size: cover;       /* Cobre toda a tela */
-    background-position: center;  /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Não repete a imagem */
-    background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
-    
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita scroll por causa das galinhas */
+    overflow: hidden; /* Impede barras de rolagem indesejadas */
+    position: relative; /* Necessário para o efeito do mouse */
+    
+    /* --- FUNDO DE ENERGIA ANIMADO --- */
+    /* Cores iniciais do gradiente em movimento */
+    background: linear-gradient(-45deg, #004691, #e30613, #ffffff, #004691);
+    background-size: 400% 400%; /* Aumenta o fundo para criar o movimento */
+    animation: energiaTricolor 15s ease infinite; /* Aplica a animação */
+}
+
+/* --- EFEITO DO MOUSE (COR MAIS VIVA) --- */
+/* Criamos um círculo de luz que segue o mouse */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                                rgba(255, 255, 255, 0.3) 0%, 
+                                rgba(255, 255, 255, 0) 50%);
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 0.3s ease; /* Transição suave ao aparecer */
+    pointer-events: none; /* Garante que o círculo não atrapalhe cliques */
+    z-index: 1; /* Fica acima do fundo animado, mas abaixo do container */
+}
+
+/* Mostra o efeito quando o mouse está sobre o corpo da página */
+body:hover::before {
+    opacity: 1;
+}
+
+/* Animação que faz as cores do fundo se moverem como energia */
+@keyframes energiaTricolor {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 20px 40px 40px 40px; /* Reduzi o padding do topo para acomodar a logo */
+    padding: 30px 40px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 380px;
-    border-left: 10px solid #004691;   /* Azul Bahia */
-    border-right: 10px solid #e30613;  /* Vermelho Bahia */
-    z-index: 10;
-    position: relative; /* Importante para o posicionamento da logo */
+    border-left: 10px solid #004691; /* Azul Bahia */
+    border-right: 10px solid #e30613; /* Vermelho Bahia */
+    z-index: 10; /* Garante que o container fique no topo de tudo */
+    position: relative;
 }
 
-/* --- ESTILO DA LOGO DO BAHIA --- */
 .logo-bahia {
-    width: 80px; /* Ajuste o tamanho da logo conforme necessário */
+    width: 100px; /* Tamanho da logo */
     height: auto;
-    display: block; /* Garante que a logo ocupe uma linha própria */
-    margin: 0 auto 20px auto; /* Centraliza horizontalmente e dá espaço para o título */
-    z-index: 20; /* Fica acima de outros elementos dentro do container */
+    margin: 0 auto 15px auto;
+    display: block;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     color: #004691;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
 }
 
 input[type="number"] {
-    width: 80%;
+    width: 100%;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    font-size: 1.1rem;
     margin-bottom: 20px;
     outline: none;
 }
@@ -83,19 +101,19 @@ button {
     background-color: #e30613;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 1.2rem;
     cursor: pointer;
     width: 100%;
-    transition: transform 0.2s, background 0.3s;
     font-family: 'Oswald', sans-serif;
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #004691;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 #resultadoTabuada {
@@ -106,9 +124,32 @@ button:hover {
     color: #333;
 }
 
-/* --- O CURRAL (Área das Galinhas) --- */
-
+/* --- ANIMAÇÃO DAS GALINHAS --- */
 .zona-das-galinhas {
     position: absolute;
     bottom: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 2; /* Acima do efeito do mouse, abaixo do container */
+}
+
+.galinha {
+    position: absolute;
+    bottom: 10px;
+    font-size: 50px;
+    /* Camisa listrada do rival */
+    background: repeating-linear-gradient(0deg, #000, #000 8px, #f00 8px, #f00 16px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: correr 6s linear infinite;
+}
+
+.g1 { animation-delay: 0s; }
+.g2 { animation-delay: 2s; }
+.g3 { animation-delay: 4s; }
+
+@keyframes correr {
+    0% { left: -100px; transform: scaleX(-1); }
+    100% { left: 110%; transform: scaleX(-1); }
 }
