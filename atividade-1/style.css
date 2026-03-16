@@ -1,0 +1,114 @@
+/* reset do navegador */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Importando a fonte para o estilo "Bora Bahêa" */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+    /* --- CORREÇÃO DO FUNDO --- */
+    /* 1. Define uma cor de fundo escura caso a imagem falhe */
+    background-color: #1a1a1a; 
+    
+    /* 2. Aplica o degradê de escurecimento E a imagem */
+    /* IMPORTANTE: Baixe uma imagem da Arena e salve como 'fundo-arena.jpg' 
+       na mesma pasta do seu arquivo CSS. Depois, use o código abaixo: */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('fundo-arena.jpg'); /* Nome do arquivo local */
+
+    /* Se você quiser tentar usar o link da internet novamente, use este: */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Itaipava_Arena_Fonte_Nova_-_Salvador_-_Bahia_-_Brasil_%28setembro_de_2015%29.jpg'); */
+
+    background-size: cover;       /* Cobre toda a tela */
+    background-position: center;  /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita scroll por causa das galinhas */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 40px 40px 40px; /* Reduzi o padding do topo para acomodar a logo */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 380px;
+    border-left: 10px solid #004691;   /* Azul Bahia */
+    border-right: 10px solid #e30613;  /* Vermelho Bahia */
+    z-index: 10;
+    position: relative; /* Importante para o posicionamento da logo */
+}
+
+/* --- ESTILO DA LOGO DO BAHIA --- */
+.logo-bahia {
+    width: 80px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    display: block; /* Garante que a logo ocupe uma linha própria */
+    margin: 0 auto 20px auto; /* Centraliza horizontalmente e dá espaço para o título */
+    z-index: 20; /* Fica acima de outros elementos dentro do container */
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #004691;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+button {
+    background-color: #e30613;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, background 0.3s;
+    font-family: 'Oswald', sans-serif;
+}
+
+button:hover {
+    background-color: #004691;
+    transform: scale(1.05);
+}
+
+#resultadoTabuada {
+    margin-top: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+    font-weight: 600;
+    color: #333;
+}
+
+/* --- O CURRAL (Área das Galinhas) --- */
+
+.zona-das-galinhas {
+    position: absolute;
+    bottom: 0;
+}
