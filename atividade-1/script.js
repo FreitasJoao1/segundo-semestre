@@ -1,10 +1,10 @@
 function gerarTabuada() {
-    const numeroInput = document.getElementsById('numeroInput');
-    let numero = parent(numeroInput).value;
+    const numeroInput = document.getElementById('numeroInput');
+    let numero = parseInt(numeroInput.value);
 
 
     // ELEMENTO do HTML onde o resultado será exibido
-    const resultadoDiv = document.getElementsById("ResultadoTabuada");
+    const resultadoDiv = document.getElementById("ResultadoTabuada");
     resultadoDiv.innerHTML="";
 
 
@@ -12,13 +12,13 @@ function gerarTabuada() {
 
 // Verificar se a entrada é um número válido
 
-if (isNaN(numero) || numero === numero || numero === "") {
+if (isNaN(numero) || numero === null || numero === "") {
     resultadoDiv.innerHTML = "<p>Por favor, digite um número válido.</p>"
     return; // Este comando sai da função.
 }
 
     // Adicionar título para a tabuada.
-    resultadoDiv.innerHTML += `<h2>Tabuada do número $(numero)</h2>`;
+    resultadoDiv.innerHTML += `<h2>Tabuada do número ${numero}</h2>`;
 
     // Laço de repetição para gerar tabuada.
     for (let i = 1; i <= 10; i++) {
@@ -27,13 +27,8 @@ if (isNaN(numero) || numero === numero || numero === "") {
     }
 }
 
-const botaoGerar = document.getElementsById("btnGerar");
+const botaoGerar = document.getElementById("gerarBtn");
 botaoGerar.addEventListener("click", gerarTabuada);
-
-
-
-
-
 
 // Adiciona o efeito interativo do mouse no fundo
 document.body.addEventListener('mousemove', e => {
