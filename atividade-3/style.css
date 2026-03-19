@@ -1,0 +1,114 @@
+/* Configurações de Fundo */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: url('assets/fundo-escola-do-viloes.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* O Quadrado Transparente/Embaçado */
+.container {
+    width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15); /* Transparência */
+    backdrop-filter: blur(15px); /* Embaçado estilo iOS/Astro Bot */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 10;
+}
+
+.logo {
+    width: 160%; 
+    margin-bottom: 30px;
+    display: block;
+    margin-left: -30%; /* Ajuste para centralizar, já que ela é maior que o container */
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); /* Sombra para dar profundidade */
+}
+
+.inputs-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    text-align: left;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+/* Botão Estilo Game */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: #7d2ae8; /* Roxo Astro Bot */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 5px 0 #5a1bb1;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #5a1bb1;
+}
+
+/* Efeito Polícia RGB */
+.police-flash {
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 20px;
+    display: none;
+    animation: policeColors 0.3s infinite;
+}
+
+@keyframes policeColors {
+    0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+    50% { color: #0000ff; text-shadow: 0 0 10px #0000ff; }
+    100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Partículas */
+.money {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}

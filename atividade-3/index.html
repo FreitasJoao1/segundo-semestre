@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola dos Vilões - Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particle-container"></div>
+
+    <div class="container">
+        <img src="assets/fundom.png" alt="Escola dos Vilões" class="logo">
+
+        <div class="inputs-group">
+            <label for="n1">Nota 1:</label>
+            <input type="number" id="n1" placeholder="Ex: 10" min="0" max="10">
+
+            <label for="n2">Nota 2:</label>
+            <input type="number" id="n2" placeholder="Ex: 10" min="0" max="10">
+        
+            <label for="n3">Nota 3:</label>
+            <input type="number" id="n3" placeholder="Ex: 10" min="0" max="10">
+        </div>
+
+        <button id="gerarBtn">Calcular Média</button>
+
+        <div id="status-area">
+            <div id="timer" class="police-flash"></div>
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
