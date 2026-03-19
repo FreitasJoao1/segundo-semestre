@@ -1,0 +1,126 @@
+/* Configurações Gerais */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif; /* Estilo formal de tribunal */
+    overflow: hidden; /* Impede rolagem na tela inteira */
+}
+
+/* O "Quadrado Transparente" (Painel) */
+.panel {
+    background: rgba(255, 255, 255, 0.2); /* Branco translúcido */
+    backdrop-filter: blur(12px); /* Efeito de vidro embaçado */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Sombra dramática */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    width: 420px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Espaço para a Logo */
+.logo-space {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Configuração da Logo Real */
+.logo-space img {
+    max-width: 150%; /* Ajusta o tamanho da logo para caber bem no quadrado */
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4)); /* Sombra para dar profundidade na logo 3D */
+}
+
+/* Título e Labels */
+.idade h3 {
+    color: #d1b464; /* Cor bronze/ouro */
+    margin-top: 0;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.idade label {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Input de Idade */
+.idade input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1b464;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+/* Container para Efeitos do Botão */
+.button-container {
+    position: relative; /* Para as pseudos-emojis */
+    display: inline-block;
+    margin-top: 30px;
+}
+
+/* O Botão Principal com Emojis Integrados ⚖️ */
+#verificarBtn {
+    padding: 18px 40px;
+    background: #d1b464; /* Cor bronze/ouro */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4em;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 5px 0 #9c844a; /* Sombra de clique */
+}
+#verificarBtn:hover {
+    background: #e1c474;
+}
+#verificarBtn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #9c844a;
+}
+
+/* Emojis Laterais "Estilo Justiça" (Inicialmente Ocultos) */
+.button-container::before, .button-container::after {
+    content: '🧑‍⚖️'; /* Emoji de Juiz */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    opacity: 0; /* Oculto */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.button-container::before {
+    left: -50px; /* Esquerda do botão */
+}
+.button-container::after {
+    right: -50px; /* Direita do botão */
+}
+
+/* Classe ativada pelo JS quando o resultado é mostrado */
+.button-container.justice-active::before, .button-container.justice-active::after {
+    opacity: 1; /* Mostra os emojis laterais */
+}
+
+/* Área de Resultado */
+#resultado {
+    margin-top: 25px;
+    color: white;
+    font-size: 1.3em;
+    min-height: 35px; /* Mantém espaço fixo */
+    font-weight: bold;
+}

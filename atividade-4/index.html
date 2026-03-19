@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>STF - Verificação Eleitoral</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body style="background: url('assets/fundoelei.png') no-repeat center center fixed; background-size: cover;">
+    <div id="particle-container"></div>
+
+    <div id="panel" class="panel">
+        
+        <div id="logoSpace" class="logo-space">
+            <img src="assets/stfsemfundo.png" alt="STF Logo" class="logo">
+        </div>
+
+        <div class="idade">
+            <h3>Verificação de Idade para votação</h3>
+            <label for="i1">Digite sua idade:</label>
+            <input type="number" id="i1" placeholder="Ex: 18" min="0" max="120">
+        </div>
+
+        <div class="button-container">
+            <button id="verificarBtn">⚖️ Verificar ⚖️</button>
+        </div>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
