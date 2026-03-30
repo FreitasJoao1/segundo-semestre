@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+:root {
+    --viking-dark: #1a1a1a;
+    --viking-gold: #c5a059;
+    --viking-blood: #8b0000;
+    --viking-steel: #4a4e52;
+    --viking-wood: #2d1b0d;
+}
+
+.info-aluno {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://www.transparenttextures.com/patterns/dark-wood.png'), 
+                var(--viking-wood);
+    color: #e0e0e0;
+    padding: 30px;
+    border: 4px solid var(--viking-steel);
+    border-radius: 8px;
+    width: 350px;
+    font-family: 'Cinzel', serif; /* Fonte com estilo nórdico */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    cursor: url('https://img.icons8.com/ios-filled/25/c5a059/axe.png'), auto; /* Cursor de machado opcional */
+}
+
+/* Efeito Visual ao passar o mouse */
+.info-aluno:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--viking-gold);
+    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.3);
+}
+
+.info-aluno h1 {
+    color: var(--viking-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--viking-blood);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.info-aluno p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    border-left: 3px solid transparent;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+.info-aluno p:hover {
+    border-left: 3px solid var(--viking-gold);
+    color: #fff;
+    background: rgba(197, 160, 89, 0.1);
+}
+
+/* Sistema de Frases Randômicas via CSS */
+.info-aluno::after {
+    content: "";
+    display: block;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--viking-gold);
+    text-align: center;
+    min-height: 40px;
+    animation: cycleQuotes 20s infinite;
+    opacity: 0;
+}
+
+@keyframes cycleQuotes {
+    0%, 20% { content: "— 'O poder só é dado àqueles que estão dispostos a se abaixar e pegá-lo.' (Ragnar)"; opacity: 0; }
+    5%, 15% { opacity: 1; }
+    
+    25%, 45% { content: "— 'O destino é tudo.' (Uhtred... opa, série errada, mas serve!)"; opacity: 0; }
+    30%, 40% { opacity: 1; }
+
+    50%, 70% { content: "— 'Não se esqueça de quem você é.' (Lagertha)"; opacity: 0; }
+    55%, 65% { opacity: 1; }
+
+    75%, 95% { content: "— 'O mundo está mudando e nós devemos mudar com ele.' (Bjorn)"; opacity: 0; }
+    80%, 90% { opacity: 1; }
+}
+
+/* Detalhe de runas no fundo ao passar o mouse */
+.info-aluno::before {
+    content: "ᚱᚢᚾᛅᛋ";
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    font-size: 4rem;
+    opacity: 0.05;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.info-aluno:hover::before {
+    bottom: 10px;
+    opacity: 0.15;
+}
