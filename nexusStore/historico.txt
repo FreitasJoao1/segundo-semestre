@@ -1,0 +1,1 @@
+[28/05/2026, 13:55:12] - AÇÃO: ADICIONADO | TABELA: Clientes | DADOS: {"id":2,"nome":"Jose Aleixo","email":"Josealeixo@gmailcom","telefone":"98172361673","cpf":"997.197.534-21","updatedAt":"2026-05-28T16:55:12.570Z","createdAt":"2026-05-28T16:55:12.570Z"}
